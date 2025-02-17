@@ -5,4 +5,9 @@
 
 @theme {
   --font-mdsans: "DM Sans", serif;
+  --color-primary: #212936CC;
+  --color-btns: #4D5562;
+  --color-blueV1: #263FA9;
+  --color-blueV2: #7CA9F3;
+  --color-back: #040711;
 }

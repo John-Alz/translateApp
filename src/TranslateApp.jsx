@@ -1,9 +1,10 @@
 import React from 'react'
+import { FormTranslate } from './components/FormTranslate'
 
 export const TranslateApp = () => {
     return (
-        <div>
-            <h1 className='text-4xl font-mdsans'>Hola</h1>
+        <div className='bg-back h-screen font-mdsans'>
+            <FormTranslate />
         </div>
     )
 }
