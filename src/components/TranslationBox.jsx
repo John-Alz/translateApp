@@ -2,6 +2,8 @@ import { useContext } from 'react'
 import { TranslateContext } from '../context/TranslateContext'
 import { useState } from 'react';
 import { Buttons } from './Buttons';
+import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
 export const TranslationBox = () => {
@@ -16,10 +18,15 @@ export const TranslationBox = () => {
     }
 
     const handleClick = () => {
-        dispatch({
-            type: 'set-translate',
-            payload: words
-        })
+
+        if (words.length < 1) {
+            toast.error('You have to write something')
+        } else {
+            dispatch({
+                type: 'set-translate',
+                payload: words
+            })
+        }
 
     }
 
@@ -28,6 +35,7 @@ export const TranslationBox = () => {
     return (
         <>
             <form>
+                <ToastContainer theme="dark" />
                 <textarea value={words} onKeyDown={handleChange} onChange={handleChange} className='w-full' maxLength={500} rows="5" cols="50">
                 </textarea>
                 <div className='flex justify-end'>
