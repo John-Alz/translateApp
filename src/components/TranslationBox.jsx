@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { TranslateContext } from '../context/TranslateContext'
 import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import { Buttons } from './Buttons';
 
 
@@ -24,13 +23,13 @@ export const TranslationBox = () => {
             type: 'set-translate',
             payload: words
         })
+
     }
 
 
 
     return (
         <>
-            <ToastContainer theme="dark" />
             <form>
                 <textarea value={words} onChange={handleChange} className='w-full' maxLength={500} rows="4" cols="50">
                 </textarea>

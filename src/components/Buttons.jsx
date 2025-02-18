@@ -1,6 +1,8 @@
 import React from 'react'
 import { useContext } from 'react';
 import { TranslateContext } from '../context/TranslateContext';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 export const Buttons = ({ isOrigin }) => {
 
@@ -29,6 +31,7 @@ export const Buttons = ({ isOrigin }) => {
 
     return (
         <div className='flex gap-2'>
+            <ToastContainer theme="dark" />
             <button onClick={readText} className='border-2 border-btns p-2 rounded-lg cursor-pointer'><img src={'/public/sound_max_fill.svg'} alt='sound' /></button>
             <button onClick={copyText} className='border-2 border-btns p-2 rounded-lg cursor-pointer'><img src={'/public/Copy.svg'} alt='sound' /></button>
         </div>

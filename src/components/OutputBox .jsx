@@ -11,7 +11,6 @@ export const OutputBox = () => {
 
     return (
         <>
-            <ToastContainer theme="dark" />
             <form>
                 <textarea value={state.translated} className='w-full' rows="4" cols="50">
 
