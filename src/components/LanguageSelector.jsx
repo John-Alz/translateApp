@@ -45,9 +45,9 @@ export const LanguageSelector = ({ flag }) => {
                     }
                 </select>
             </div>
-            {
+            {/* {
                 flag === false && <img className='border-2 border-btns p-2 rounded-lg cursor-pointer' src={'/Horizontal_top_left_main.svg'} alt='copyLogo' />
-            }
+            } */}
         </div>
     )
 }
