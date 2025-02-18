@@ -5,7 +5,9 @@ import { translateReducer } from '../reducers/translateReducer'
 
 const initialState = {
     translate: 'Hello, how are you?',
-    translated: ''
+    translated: '',
+    languageOrigin: 'en',
+    languageTarget: 'fr'
 }
 
 export const TranslateProvider = ({ children }) => {
