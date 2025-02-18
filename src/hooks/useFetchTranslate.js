@@ -14,6 +14,6 @@ export const useFetchTranslate = (url, dispatch) => {
 
     useEffect(() => {
         fetchData();
-    }, [url])
+    }, [])
 
 }

@@ -37,7 +37,7 @@ export const LanguageSelector = ({ flag }) => {
                 }
                 <button onClick={handelSelect} value='en' className={`py-1 px-2 rounded-xl cursor-pointer ${flag && sourceLang === 'en' || targetLang === 'en' ? 'bg-btns' : null}`}>English</button>
                 <button onClick={handelSelect} value='fr' className={`py-1 px-2 rounded-xl cursor-pointer ${!flag && targetLang === 'fr' || sourceLang === 'fr' ? 'bg-btns' : null}`}>French</button>
-                <select onClick={handelSelect} className='py-1 px-2 rounded-xl cursor-pointer w-[105px]'>
+                <select onClick={handelSelect} className=' py-1 px-2 rounded-xl cursor-pointer w-[105px]'>
                     {
                         languages.map(language => (
                             <option key={language.name} className='bg-btns' value={language.code}>{language.name}</option>

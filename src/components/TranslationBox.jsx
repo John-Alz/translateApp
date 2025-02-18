@@ -40,7 +40,7 @@ export const TranslationBox = () => {
 
             <div className='flex justify-between'>
                 <Buttons isOrigin={true} />
-                <button onClick={handleClick} className='bg-blueV1 flex border border-blueV2 py-2 px-4 rounded-2xl cursor-pointer'><img src={'/Sort_alfa.svg'} alt='Alpha' />Translate</button>
+                <button onClick={handleClick} className='bg-blueV1 flex border border-blueV2 py-2 px-4 rounded-2xl cursor-pointer items-center'><img className='w-[15px] md:w-[20px]' src={'/Sort_alfa.svg'} alt='Alpha' />Translate</button>
             </div>
         </>
     )
