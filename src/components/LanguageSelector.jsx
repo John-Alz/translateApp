@@ -27,8 +27,8 @@ export const LanguageSelector = ({ flag }) => {
 
 
     return (
-        <div className='w-[95%] flex justify-between'>
-            <div className=' flex gap-7 px-2'>
+        <div className='w-[95%] flex justify-between '>
+            <div className={` flex justify-between gap-2 md:gap-7 px-2 ${flag && 'flex-wrap'} `}>
                 {
                     flag === true && <button onClick={handelSelect} value='dt' className={` rounded-xl cursor-pointer ${active === 'dt' ? 'bg-btns' : null}`}>Detect Language</button>
                 }
