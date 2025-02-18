@@ -12,7 +12,7 @@ export const OutputBox = () => {
     return (
         <>
             <form>
-                <textarea value={state.translated} className='w-full' rows="4" cols="50">
+                <textarea value={state.translated} className='w-full' rows="5" cols="50">
 
                 </textarea>
                 <div className='flex justify-end'>

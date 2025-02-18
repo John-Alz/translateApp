@@ -8,16 +8,19 @@ export const LanguageSelector = ({ flag }) => {
 
     const [state, dispatch] = useContext(TranslateContext)
 
-    const [active, setActive] = useState('en');
+    const [sourceLang, setSourceLang] = useState("en");
+    const [targetLang, setTargetLang] = useState("fr");
+
 
     const handelSelect = (e) => {
-        setActive(e.target.value)
         if (flag == true) {
+            setSourceLang(e.target.value)
             dispatch({
                 type: 'set-languaje-origin',
                 payload: e.target.value
             })
         } else {
+            setTargetLang(e.target.value)
             dispatch({
                 type: 'set-languaje-target',
                 payload: e.target.value
@@ -27,13 +30,13 @@ export const LanguageSelector = ({ flag }) => {
 
 
     return (
-        <div className='w-[95%] flex justify-between '>
-            <div className={` flex justify-between gap-2 md:gap-7 px-2 ${flag && 'flex-wrap'} `}>
+        <div className='flex justify-between '>
+            <div className={` flex justify-between gap-2 md:gap-7 ${flag && 'flex-wrap'} `}>
                 {
-                    flag === true && <button onClick={handelSelect} value='dt' className={` rounded-xl cursor-pointer ${active === 'dt' ? 'bg-btns' : null}`}>Detect Language</button>
+                    flag === true && <button onClick={handelSelect} value='autodetect' className={`px-1 rounded-xl cursor-pointer ${sourceLang === 'autodetect' ? 'bg-btns' : null}`}>Detect Language</button>
                 }
-                <button onClick={handelSelect} value='en' className={`py-1 px-2 rounded-xl cursor-pointer ${active === 'en' ? 'bg-btns' : null}`}>English</button>
-                <button onClick={handelSelect} value='fr' className={`py-1 px-2 rounded-xl cursor-pointer ${active === 'fr' ? 'bg-btns' : null}`}>French</button>
+                <button onClick={handelSelect} value='en' className={`py-1 px-2 rounded-xl cursor-pointer ${flag && sourceLang === 'en' || targetLang === 'en' ? 'bg-btns' : null}`}>English</button>
+                <button onClick={handelSelect} value='fr' className={`py-1 px-2 rounded-xl cursor-pointer ${!flag && targetLang === 'fr' || sourceLang === 'fr' ? 'bg-btns' : null}`}>French</button>
                 <select onClick={handelSelect} className='py-1 px-2 rounded-xl cursor-pointer w-[105px]'>
                     {
                         languages.map(language => (

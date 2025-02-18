@@ -2,8 +2,6 @@
 import { useContext } from 'react';
 import { useFetchTranslate } from '../hooks/useFetchTranslate';
 import { TranslateContext } from '../context/TranslateContext';
-import { useState } from 'react';
-import { languages } from '../utils/languages';
 import { LanguageSelector } from './LanguageSelector';
 import { TranslationBox } from './TranslationBox';
 import { OutputBox } from './OutputBox ';

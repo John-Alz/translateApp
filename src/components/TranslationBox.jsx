@@ -31,7 +31,7 @@ export const TranslationBox = () => {
     return (
         <>
             <form>
-                <textarea value={words} onChange={handleChange} className='w-full' maxLength={500} rows="4" cols="50">
+                <textarea value={words} onChange={handleChange} className='w-full' maxLength={500} rows="5" cols="50">
                 </textarea>
                 <div className='flex justify-end'>
                     <p>{wordsLength}/500</p>
