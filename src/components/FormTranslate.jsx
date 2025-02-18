@@ -27,10 +27,10 @@ export const FormTranslate = () => {
     console.log(state);
 
     return (
-        <div className='bg-[url("/hero_img.jpg")] bg-no-repeat bg-contain w-full'>
-            <div className='flex gap-6 justify-center items-center text-white h-screen'>
-                <div id='box-left' className='w-[560px] flex flex-col gap-5 bg-primary rounded-2xl p-[30px] border-2 border-btns'>
-                    <LanguageSelector />
+        <div className='bg-[url("/hero_img.jpg")] text-xs md:text-base bg-no-repeat bg-contain w-full'>
+            <div className='flex flex-col lg:flex-row gap-6 justify-center items-center text-white h-screen'>
+                <div id='box-left' className=' w-[95%] md:w-[560px] flex flex-col gap-5 bg-primary rounded-2xl p-[30px] border-2 border-btns'>
+                    <LanguageSelector showDetected={true} />
 
                     <hr className='border-1 border-btns' />
 
@@ -38,8 +38,8 @@ export const FormTranslate = () => {
 
                 </div>
 
-                <div id='box-right' className='w-[560px] flex flex-col gap-5 bg-primary rounded-2xl p-[30px] border-2 border-btns'>
-                    <LanguageSelector />
+                <div id='box-right' className='w-[95%] md:w-[560px] flex flex-col gap-5 bg-primary rounded-2xl p-[30px] border-2 border-btns'>
+                    <LanguageSelector showDetected={false} />
 
                     <hr className='border-1 border-btns' />
 

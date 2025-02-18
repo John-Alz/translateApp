@@ -1,13 +1,17 @@
 import React from 'react'
 import { useContext } from 'react'
 import { TranslateContext } from '../context/TranslateContext'
+import { ToastContainer, toast } from 'react-toastify';
+import { Buttons } from './Buttons';
 
 export const OutputBox = () => {
 
     const [state] = useContext(TranslateContext)
 
+
     return (
         <>
+            <ToastContainer theme="dark" />
             <form>
                 <textarea value={state.translated} className='w-full' rows="4" cols="50">
 
@@ -18,10 +22,7 @@ export const OutputBox = () => {
             </form>
 
             <div className='flex justify-between'>
-                <div className='flex gap-2'>
-                    <button className='border-2 border-btns p-2 rounded-lg'><img src={'/public/sound_max_fill.svg'} alt='sound' /></button>
-                    <button className='border-2 border-btns p-2 rounded-lg'><img src={'/public/Copy.svg'} alt='sound' /></button>
-                </div>
+                <Buttons />
             </div>
         </>
     )
