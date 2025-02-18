@@ -17,7 +17,7 @@ export const FormTranslate = () => {
     console.log(state);
 
     return (
-        <div className='bg-[url("/hero_img.jpg")] text-xs md:text-base bg-no-repeat bg-contain w-full'>
+        <div className='bg-[url("/hero_img.jpg")] text-xs md:text-base bg-no-repeat lg:bg-center bg-contain lg:bg-[length:100%_100%] w-full lg:h-[50vh]'>
             <div className='flex flex-col lg:flex-row gap-6 justify-center items-center text-white h-screen'>
                 <div id='box-left' className=' w-[95%] md:w-[560px] flex flex-col gap-5 bg-primary rounded-2xl p-[30px] border-2 border-btns'>
                     <LanguageSelector flag={true} />
