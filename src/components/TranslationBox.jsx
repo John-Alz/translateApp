@@ -10,12 +10,9 @@ export const TranslationBox = () => {
     const [state, dispatch] = useContext(TranslateContext);
 
     const [words, setWords] = useState(state.translate);
-    const [wordsLength, setWordsLength] = useState(state.translate.length);
 
     const handleChange = (e) => {
-        console.log(e.key);
         setWords(e.target.value)
-        setWordsLength(wordsLength + 1)
     }
 
     const handleClick = () => {
@@ -31,10 +28,10 @@ export const TranslationBox = () => {
     return (
         <>
             <form>
-                <textarea value={words} onChange={handleChange} className='w-full' maxLength={500} rows="5" cols="50">
+                <textarea value={words} onKeyDown={handleChange} onChange={handleChange} className='w-full' maxLength={500} rows="5" cols="50">
                 </textarea>
                 <div className='flex justify-end'>
-                    <p>{wordsLength}/500</p>
+                    <p>{words.length}/500</p>
                 </div>
             </form>
 
