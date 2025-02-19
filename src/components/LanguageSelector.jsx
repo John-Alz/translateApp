@@ -28,6 +28,10 @@ export const LanguageSelector = ({ flag }) => {
     }
 
 
+    console.log(languageOrigin, languageTarget);
+    console.log(state.translate, state.translate);
+
+
     return (
         <div className='flex justify-between '>
             <div className={` flex justify-between gap-2 md:gap-7 ${flag && 'flex-wrap'} `}>

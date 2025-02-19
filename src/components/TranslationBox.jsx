@@ -14,7 +14,6 @@ export const TranslationBox = () => {
 
     const [words, setWords] = useState(translate);
 
-
     const handleChange = (e) => {
         dispatch({
             type: 'set-translate',
