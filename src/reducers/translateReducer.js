@@ -1,6 +1,9 @@
 
 export const translateReducer = (state, action) => {
 
+    console.log(state);
+
+
     switch (action.type) {
         case 'set-translate':
             return { ...state, translate: action.payload };
@@ -10,6 +13,8 @@ export const translateReducer = (state, action) => {
             return { ...state, languageOrigin: action.payload }
         case 'set-languaje-target':
             return { ...state, languageTarget: action.payload }
+        case 'set-reverse':
+            return { ...state, languageTarget: state.languageOrigin, languageOrigin: state.languageTarget, translate: state.translated }
         default:
             return state;
     }

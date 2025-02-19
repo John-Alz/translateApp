@@ -10,15 +10,19 @@ export const TranslationBox = () => {
 
 
     const [state, dispatch] = useContext(TranslateContext);
+    const { translate } = state;
 
-    const [words, setWords] = useState(state.translate);
+    const [words, setWords] = useState(translate);
+
 
     const handleChange = (e) => {
-        setWords(e.target.value)
+        dispatch({
+            type: 'set-translate',
+            payload: e.target.value
+        })
     }
 
-    const handleClick = () => {
-
+    const handleClick = (e) => {
         if (words.length < 1) {
             toast.error('You have to write something')
         } else {
@@ -36,10 +40,10 @@ export const TranslationBox = () => {
         <>
             <form>
                 <ToastContainer theme="dark" />
-                <textarea value={words} onKeyDown={handleChange} onChange={handleChange} className='w-full' maxLength={500} rows="5" cols="50">
+                <textarea value={translate} onKeyDown={handleChange} onChange={handleChange} className='w-full' maxLength={500} rows="5" cols="50">
                 </textarea>
                 <div className='flex justify-end'>
-                    <p>{words.length}/500</p>
+                    <p>{translate.length}/500</p>
                 </div>
             </form>
 

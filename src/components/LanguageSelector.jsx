@@ -20,6 +20,14 @@ export const LanguageSelector = ({ flag }) => {
         })
     }
 
+
+    const reverseState = () => {
+        dispatch({
+            type: 'set-reverse'
+        })
+    }
+
+
     return (
         <div className='flex justify-between '>
             <div className={` flex justify-between gap-2 md:gap-7 ${flag && 'flex-wrap'} `}>
@@ -41,9 +49,9 @@ export const LanguageSelector = ({ flag }) => {
                     }
                 </select>
             </div>
-            {/* {
-                flag === false && <img className='border-2 border-btns p-2 rounded-lg cursor-pointer' src={'/Horizontal_top_left_main.svg'} alt='copyLogo' />
-            } */}
+            {
+                flag === false && <img onClick={reverseState} className='border-2 border-btns p-2 rounded-lg cursor-pointer' src={'/Horizontal_top_left_main.svg'} alt='copyLogo' />
+            }
         </div>
     )
 }
